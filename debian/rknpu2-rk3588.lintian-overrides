@@ -1,0 +1,20 @@
+# We do not track this on GitHub
+rknpu2-rk3588: initial-upload-closes-no-bugs
+
+# Can't do anything with Rockchip prebuilts
+rknpu2-rk3588: hardening-no-pie
+
+# Can't do anything with Rockchip prebuilts
+rknpu2-rk3588: hardening-no-relro
+
+# Upstream does not provide this file
+rknpu2-rk3588: no-manual-page
+
+# Ain't happening because there are 2 incompatible variants of this library
+rknpu2-rk3588: package-name-doesnt-match-sonames
+
+# The runtime IS the development package
+rknpu2-rk3588: link-to-shared-library-in-wrong-package
+
+# Can't do anything with Rockchip prebuilts
+rknpu2-rk3588: shared-library-lacks-version

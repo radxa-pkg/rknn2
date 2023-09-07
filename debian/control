@@ -1,0 +1,48 @@
+Source: rknn2
+Maintainer: "Radxa Computer Co., Ltd" <dev@radxa.com>
+Section: misc
+Priority: optional
+Standards-Version: 4.6.0
+Build-Depends: debhelper (>=12~),
+               devscripts,
+               lintian,
+               dh-exec,
+               python-wheel-common,
+               python3-pkg-resources,
+               python3-distutils,
+               python3-setuptools
+
+Package: rknpu2-rk3588
+Provides: rknpu2
+Architecture: any
+Section: misc
+Priority: optional
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Rockchip RKNPU2 for RK3588
+ This package provides Rockchip RKNPU2 for RK3588.
+
+Package: rknpu2-rk356x
+Provides: rknpu2
+Architecture: any
+Section: misc
+Priority: optional
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Rockchip RKNPU2 for RK356X
+ This package provides Rockchip RKNPU2 for RK356X.
+
+Package: python3-rknnlite2
+Provides: python3-rknnlite
+Architecture: any
+Section: python
+Priority: optional
+Depends: rknpu2,
+         python3,
+         python3-ruamel.yaml,
+         python3-psutil,
+         python3-numpy,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Rockchip RKNN-Toolkit-Lite2
+ This package provides Rockchip RKNN-Toolkit-Lite2.

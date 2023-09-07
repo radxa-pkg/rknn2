@@ -1,0 +1,8 @@
+# We do not track this on GitHub
+python3-rknnlite2: initial-upload-closes-no-bugs
+
+# Can't do anything with Rockchip prebuilts
+python3-rknnlite2: hardening-no-pie
+
+# Can't do anything with Rockchip prebuilts
+python3-rknnlite2: hardening-no-relro

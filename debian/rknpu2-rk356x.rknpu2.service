@@ -1,0 +1,10 @@
+[Unit]
+Description=rknn server daemon
+Documentation=https://github.com/radxa-pkg/rknn2/
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rknn_server
+
+[Install]
+WantedBy=multi-user.target
