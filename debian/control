@@ -54,6 +54,7 @@ Architecture: all
 Section: python
 Priority: optional
 Depends: python3-rknnlite2 (= ${binary:Version}),
+         python3-opencv,
          ${misc:Depends},
          ${shlibs:Depends}
 Description: Rockchip RKNN-Toolkit-Lite2 Example
