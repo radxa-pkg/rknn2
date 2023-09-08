@@ -1,3 +1,10 @@
+rknn2 (1.5.2-2) stable; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Add python3-rknnlite2-example
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 08 Sep 2023 12:18:13 +0800
+
 rknn2 (1.5.2-1) stable; urgency=medium
 
   [ ZHANG Yuntian ]
