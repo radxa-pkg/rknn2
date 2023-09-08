@@ -1,7 +1,9 @@
-/usr/lib/aarch64-linux-gnu/librknnrt.so.1.4.0 /usr/lib/aarch64-linux-gnu/librknnrt.so.1
-/usr/lib/aarch64-linux-gnu/librknnrt.so.1.4.0 /usr/lib/aarch64-linux-gnu/librknnrt.so
-/usr/lib/aarch64-linux-gnu/librknnrt.so.1.4.0 /usr/lib/librknnrt.so
-/usr/lib/aarch64-linux-gnu/librknnrt.so.1.4.0 /usr/lib/aarch64-linux-gnu/librknn_api.so.1.4.0
-/usr/lib/aarch64-linux-gnu/librknn_api.so.1.4.0 /usr/lib/aarch64-linux-gnu/librknn_api.so.1
-/usr/lib/aarch64-linux-gnu/librknn_api.so.1.4.0 /usr/lib/aarch64-linux-gnu/librknn_api.so
-/usr/lib/aarch64-linux-gnu/librknn_api.so.1.4.0 /usr/lib/librknn_api.so
+#!/usr/bin/dh-exec
+
+/usr/lib/aarch64-linux-gnu/librknnrt.so.${DEB_RKNN_VERSION} /usr/lib/aarch64-linux-gnu/librknnrt.so.1
+/usr/lib/aarch64-linux-gnu/librknnrt.so.${DEB_RKNN_VERSION} /usr/lib/aarch64-linux-gnu/librknnrt.so
+/usr/lib/aarch64-linux-gnu/librknnrt.so.${DEB_RKNN_VERSION} /usr/lib/librknnrt.so
+/usr/lib/aarch64-linux-gnu/librknnrt.so.${DEB_RKNN_VERSION} /usr/lib/aarch64-linux-gnu/librknn_api.so.${DEB_RKNN_VERSION}
+/usr/lib/aarch64-linux-gnu/librknn_api.so.${DEB_RKNN_VERSION} /usr/lib/aarch64-linux-gnu/librknn_api.so.1
+/usr/lib/aarch64-linux-gnu/librknn_api.so.${DEB_RKNN_VERSION} /usr/lib/aarch64-linux-gnu/librknn_api.so
+/usr/lib/aarch64-linux-gnu/librknn_api.so.${DEB_RKNN_VERSION} /usr/lib/librknn_api.so

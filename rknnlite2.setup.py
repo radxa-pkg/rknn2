@@ -2,6 +2,6 @@ from setuptools import setup, find_packages
 
 setup(
     name = "rknnlite",
-    version = "1.4.0",
+    version = "__VERSION__",
     packages = find_packages()
     )

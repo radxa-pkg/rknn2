@@ -3,6 +3,7 @@ PREFIX ?= /usr
 BINDIR ?= $(PREFIX)/bin
 LIBDIR ?= $(PREFIX)/lib
 MANDIR ?= $(PREFIX)/share/man
+VERSION := 1.5.2
 
 .PHONY: all
 all: build
@@ -17,7 +18,7 @@ test:
 # Build
 #
 .PHONY: build
-build: build-doc rknnlite2/rknn_toolkit_lite2-1.4.0/rknnlite.egg-info
+build: build-doc rknnlite2/rknn_toolkit_lite2-$(VERSION)/rknnlite.egg-info
 
 SRC-DOC		:=	.
 DOCS		:=	$(SRC-DOC)/SOURCE
@@ -31,14 +32,14 @@ $(SRC-DOC):
 $(SRC-DOC)/SOURCE: $(SRC-DOC)
 	echo -e "git clone $(shell git remote get-url origin)\ngit checkout $(shell git rev-parse HEAD)" > "$@"
 
-rknnlite2: rknn-toolkit2/rknn_toolkit_lite2/packages/rknn_toolkit_lite2-1.4.0-cp39-cp39-linux_aarch64.whl
+rknnlite2: rknn-toolkit2/rknn_toolkit_lite2/packages/rknn_toolkit_lite2-$(VERSION)-cp39-cp39-linux_aarch64.whl
 	wheel unpack -d "$@" "$<"
 
-rknnlite2/rknn_toolkit_lite2-1.4.0/setup.py: rknnlite2.setup.py rknnlite2
-	cp "$<" "$@"
+rknnlite2/rknn_toolkit_lite2-$(VERSION)/setup.py: rknnlite2.setup.py rknnlite2
+	sed "s/__VERSION__/$(VERSION)/g" "$<" > "$@"
 
-rknnlite2/rknn_toolkit_lite2-1.4.0/rknnlite.egg-info: rknnlite2/rknn_toolkit_lite2-1.4.0/setup.py
-	cd rknnlite2/rknn_toolkit_lite2-1.4.0 && \
+rknnlite2/rknn_toolkit_lite2-$(VERSION)/rknnlite.egg-info: rknnlite2/rknn_toolkit_lite2-$(VERSION)/setup.py
+	cd rknnlite2/rknn_toolkit_lite2-$(VERSION) && \
 	python3 setup.py bdist_egg
 
 #
@@ -67,4 +68,4 @@ dch: debian/changelog
 
 .PHONY: deb
 deb: debian
-	debuild --no-lintian --lintian-hook "lintian --fail-on error,warning --suppress-tags bad-distribution-in-changes-file -- %p_%v_*.changes" --no-sign -b -aarm64 -Pcross
+	debuild --set-envvar DEB_RKNN_VERSION="$(VERSION)" --no-lintian --lintian-hook "lintian --fail-on error,warning --suppress-tags bad-distribution-in-changes-file -- %p_%v_*.changes" --no-sign -b -aarm64 -Pcross

@@ -1,5 +1,5 @@
 #!/usr/bin/dh-exec
 
-rknpu2/runtime/RK356X/Linux/librknn_api/aarch64/librknnrt.so => /usr/lib/aarch64-linux-gnu/librknnrt.so.1.4.0
+rknpu2/runtime/RK356X/Linux/librknn_api/aarch64/librknnrt.so => /usr/lib/aarch64-linux-gnu/librknnrt.so.${DEB_RKNN_VERSION}
 rknpu2/runtime/RK356X/Linux/librknn_api/include/ /usr/
 rknpu2/runtime/RK356X/Linux/rknn_server/aarch64/usr/bin/rknn_server /usr/bin/
