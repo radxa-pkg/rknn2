@@ -2,7 +2,7 @@
 /debhelper-build-stamp
 /files
 /rknpu2-*/
-/python3-rknnlite2/
+/python3-rknnlite2*/
 /*.debhelper.log
 /*.postrm.debhelper
 /*.substvars

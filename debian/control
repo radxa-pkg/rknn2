@@ -47,3 +47,14 @@ Depends: rknpu2,
          ${shlibs:Depends}
 Description: Rockchip RKNN-Toolkit-Lite2
  This package provides Rockchip RKNN-Toolkit-Lite2.
+
+Package: python3-rknnlite2-example
+Provides: python3-rknnlite-example
+Architecture: all
+Section: python
+Priority: optional
+Depends: python3-rknnlite2 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Rockchip RKNN-Toolkit-Lite2 Example
+ This package provides example for Rockchip RKNN-Toolkit-Lite2.
