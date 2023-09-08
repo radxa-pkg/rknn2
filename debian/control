@@ -10,7 +10,8 @@ Build-Depends: debhelper (>=12~),
                python-wheel-common,
                python3-pkg-resources,
                python3-distutils,
-               python3-setuptools
+               python3-setuptools,
+               patchelf
 
 Package: rknpu2-rk3588
 Provides: rknpu2

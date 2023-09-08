@@ -35,7 +35,12 @@ $(SRC-DOC)/SOURCE: $(SRC-DOC)
 rknnlite2: rknn-toolkit2/rknn_toolkit_lite2/packages/rknn_toolkit_lite2-$(VERSION)-cp39-cp39-linux_aarch64.whl
 	wheel unpack -d "$@" "$<"
 
-rknnlite2/rknn_toolkit_lite2-$(VERSION)/setup.py: rknnlite2.setup.py rknnlite2
+RKNNLITE2		:=	rknnlite2/rknn_toolkit_lite2-$(VERSION)/rknnlite
+.PHONY: patch_rknnlite2
+patch_rknnlite2: rknnlite2
+	patchelf --remove-rpath $(wildcard $(RKNNLITE2)/api/*.so) $(wildcard $(RKNNLITE2)/api/npu_config/*.so) $(wildcard $(RKNNLITE2)/utils/*.so)
+
+rknnlite2/rknn_toolkit_lite2-$(VERSION)/setup.py: rknnlite2.setup.py patch_rknnlite2
 	sed "s/__VERSION__/$(VERSION)/g" "$<" > "$@"
 
 rknnlite2/rknn_toolkit_lite2-$(VERSION)/rknnlite.egg-info: rknnlite2/rknn_toolkit_lite2-$(VERSION)/setup.py

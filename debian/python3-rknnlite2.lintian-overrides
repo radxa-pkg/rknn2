@@ -6,6 +6,3 @@ python3-rknnlite2: hardening-no-pie
 
 # Can't do anything with Rockchip prebuilts
 python3-rknnlite2: hardening-no-relro
-
-# Can't do anything with Rockchip prebuilts... or can we?
-python3-rknnlite2: custom-library-search-path
