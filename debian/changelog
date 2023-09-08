@@ -1,3 +1,11 @@
+rknn2 (1.5.2-1) stable; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Upgrade rknn2 to v1.5.2
+  * Remove RPATH from python3-rknnlite2
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 08 Sep 2023 12:07:48 +0800
+
 rknn2 (1.4.0-1) stable; urgency=medium
 
   * Initial release
