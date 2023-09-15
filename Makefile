@@ -62,7 +62,7 @@ clean-doc:
 
 .PHONY: clean-deb
 clean-deb:
-	rm -rf rknnlite2 obj-aarch64-linux-gnu debian/.debhelper debian/python3-rknnlite2/ debian/rknpu2-*/ debian/tmp/ debian/debhelper-build-stamp debian/files debian/*.debhelper.log debian/*.*.debhelper debian/*.substvars
+	rm -rf rknnlite2 obj-aarch64-linux-gnu debian/.debhelper debian/python3-rknnlite2*/ debian/rknpu2-*/ debian/tmp/ debian/debhelper-build-stamp debian/files debian/*.debhelper.log debian/*.*.debhelper debian/*.substvars
 
 #
 # Release
