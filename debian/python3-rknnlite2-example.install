@@ -1,3 +1,3 @@
 #!/usr/bin/dh-exec
 
-rknn-toolkit2/rknn_toolkit_lite2/examples/inference_with_lite/* /usr/share/python3-rknnlite2
+rknn-toolkit2/rknn_toolkit_lite2/examples/* /usr/share/python3-rknnlite2
