@@ -1,3 +1,18 @@
+rknn2 (1.6.0-1) stable; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Clean Python example temp files
+
+  [ dependabot[bot] ]
+  * Bump actions/download-artifact from 3 to 4
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 3 to 4
+  * Update to rknn2 v1.6.0
+  * Fix rknn2 v1.6.0 build
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 19 Dec 2023 15:08:59 +0800
+
 rknn2 (1.5.2-3) stable; urgency=medium
 
   [ ZHANG Yuntian ]
