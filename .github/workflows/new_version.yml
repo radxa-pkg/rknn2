@@ -26,8 +26,14 @@ jobs:
           make dch
       - name: Test
         run: |
+          make test
+      - name: Build
+        run: |
+          sudo apt-get update
           sudo apt-get build-dep --no-install-recommends -y .
-          make all test deb
+          make all
+          sudo apt install -y binfmt-support qemu-user-static
+          container/build-deb
       - name: Push
         run: |
           git push
