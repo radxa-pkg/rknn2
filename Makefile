@@ -69,8 +69,12 @@ clean-deb:
 #
 .PHONY: dch
 dch: debian/changelog
-	gbp dch --debian-branch=main
+	EDITOR=true gbp dch --debian-branch=main --commit --release --dch-opt=--upstream --multimaint-merge
 
 .PHONY: deb
 deb: debian
 	debuild --set-envvar DEB_RKNN_VERSION="$(VERSION)" --no-lintian --lintian-hook "lintian --fail-on error,warning --suppress-tags bad-distribution-in-changes-file -- %p_%v_*.changes" --no-sign -b -aarm64 -Pcross
+
+.PHONY: release
+release:
+	gh workflow run .github/workflows/new_version.yml
