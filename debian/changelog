@@ -1,3 +1,18 @@
+rknn2 (2.0.0~beta0-1) jammy; urgency=medium
+
+  [ dependabot[bot] ]
+  * Bump softprops/action-gh-release from 1 to 2
+
+  [ CodeChenL ]
+  * chore: update rknn-toolkt2 to v2.0.0-beta0
+  * feat: add CODEOWNERS
+
+  [ ZHANG Yuntian ]
+  * refactor: move container folder under .github
+  * chore: sync make dch with rsetup
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 14 Jun 2024 15:31:15 +0800
+
 rknn2 (1.6.0-2) jammy; urgency=medium
 
   [ ZHANG Yuntian ]
