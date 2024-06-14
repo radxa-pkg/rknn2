@@ -1,3 +1,10 @@
+rknn2 (2.0.0~beta0-2) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: tlide is not a legal character in tag name
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 14 Jun 2024 15:49:32 +0800
+
 rknn2 (2.0.0~beta0-1) jammy; urgency=medium
 
   [ dependabot[bot] ]
