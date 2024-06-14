@@ -33,7 +33,7 @@ jobs:
           sudo apt-get build-dep --no-install-recommends -y .
           make all
           sudo apt install -y binfmt-support qemu-user-static
-          container/build-deb
+          .github/container/build-deb
       - name: Push
         run: |
           git push
