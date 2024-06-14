@@ -3,7 +3,7 @@ PREFIX ?= /usr
 BINDIR ?= $(PREFIX)/bin
 LIBDIR ?= $(PREFIX)/lib
 MANDIR ?= $(PREFIX)/share/man
-VERSION := 1.6.0
+VERSION := 2.0.0b0
 
 .PHONY: all
 all: build
@@ -32,7 +32,7 @@ $(SRC-DOC):
 $(SRC-DOC)/SOURCE: $(SRC-DOC)
 	echo -e "git clone $(shell git remote get-url origin)\ngit checkout $(shell git rev-parse HEAD)" > "$@"
 
-rknnlite2: rknn-toolkit2/rknn_toolkit_lite2/packages/rknn_toolkit_lite2-$(VERSION)-cp39-cp39-linux_aarch64.whl
+rknnlite2: rknn-toolkit2/rknn-toolkit-lite2/packages/rknn_toolkit_lite2-$(VERSION)-cp311-cp311-linux_aarch64.whl
 	wheel unpack -d "$@" "$<"
 
 RKNNLITE2		:=	rknnlite2/rknn_toolkit_lite2-$(VERSION)/rknnlite
