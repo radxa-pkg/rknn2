@@ -51,13 +51,14 @@ jobs:
       - name: Check if the latest version is releasable
         run: |
           version="$(dpkg-parsechangelog -S Version)"
-          echo "version=${version//\~/-}" >> $GITHUB_ENV
+          version="${version//\~/.}"
+          echo "version=$version" >> $GITHUB_ENV
           echo "changes<<EOF" >> $GITHUB_ENV
           echo '```' >> $GITHUB_ENV
           echo "$(dpkg-parsechangelog -S Changes)" >> $GITHUB_ENV
           echo '```' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-          if [[ -n "$(git tag -l "${version//\~/-}")" ]]
+          if [[ -n "$(git tag -l "$version")" ]]
           then
             echo "distro=UNRELEASED" >> $GITHUB_ENV
           else
@@ -66,7 +67,7 @@ jobs:
           echo "$version" > VERSION
           if [[ -f pkg.conf.template ]]
           then
-            sed "s/VERSION/$(dpkg-parsechangelog -S Version)/g" pkg.conf.template > pkg.conf
+            sed "s/VERSION/$version/g" pkg.conf.template > pkg.conf
           fi
       - name: Release
         if: env.distro != 'UNRELEASED'
