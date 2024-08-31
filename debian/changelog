@@ -1,3 +1,11 @@
+rknn2 (2.1.0-1) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: support tlide in tag
+  * chore: bump version to v2.2.0
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Sat, 31 Aug 2024 18:38:37 +0800
+
 rknn2 (2.0.0~beta0-2) jammy; urgency=medium
 
   [ ZHANG Yuntian ]
