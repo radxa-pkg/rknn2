@@ -1,0 +1,5 @@
+export DEB_VERSION_UPSTREAM
+
+override_dh_installsystemd:
+	dh_installsystemd -prknpu2-rk356x --name=rknpu2
+	dh_installsystemd -prknpu2-rk3588 --name=rknpu2

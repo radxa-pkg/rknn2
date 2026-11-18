@@ -1,4 +1,4 @@
 #!/usr/bin/dh-exec
 
-rknnlite2/rknn_toolkit_lite2-${DEB_RKNN_VERSION}/rknnlite/ /usr/lib/python3/dist-packages/
-rknnlite2/rknn_toolkit_lite2-${DEB_RKNN_VERSION}/rknnlite.egg-info/* /usr/lib/python3/dist-packages/rknnlite-${DEB_RKNN_VERSION}.egg-info/
+rknnlite2/rknn_toolkit_lite2-${DEB_VERSION_UPSTREAM}/rknnlite/ /usr/lib/python3/dist-packages/
+rknnlite2/rknn_toolkit_lite2-${DEB_VERSION_UPSTREAM}/rknnlite.egg-info/* /usr/lib/python3/dist-packages/rknnlite-${DEB_VERSION_UPSTREAM}.egg-info/

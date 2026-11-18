@@ -1,0 +1,30 @@
+CUSTOM_DEBUILD_ARG ?= -aarm64 -Pcross
+
+VERSION ?= $(shell x=$$(dpkg-parsechangelog -S Version); echo $${x%-*})
+
+main_build: rknnlite2/rknn_toolkit_lite2-$(VERSION)/rknnlite.egg-info
+
+src/rknn-toolkit-lite2/packages/rknn_toolkit_lite2-$(VERSION)-cp311-cp311-linux_aarch64.whl:
+	FILE=src/rknn-toolkit-lite2/packages/rknn_toolkit_lite2-$(VERSION)-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl && \
+	if [ -f $$FILE ]; then cp "$$FILE" "$@"; fi
+
+rknnlite2: src/rknn-toolkit-lite2/packages/rknn_toolkit_lite2-$(VERSION)-cp311-cp311-linux_aarch64.whl
+	wheel unpack -d "$@" "$<"
+
+RKNNLITE2	:=	rknnlite2/rknn_toolkit_lite2-$(VERSION)/rknnlite
+.PHONY: patch_rknnlite2
+patch_rknnlite2: rknnlite2
+	patchelf --remove-rpath $(wildcard $(RKNNLITE2)/api/*.so) $(wildcard $(RKNNLITE2)/api/npu_config/*.so) $(wildcard $(RKNNLITE2)/utils/*.so)
+
+rknnlite2/rknn_toolkit_lite2-$(VERSION)/setup.py: rknnlite2.setup.py patch_rknnlite2
+	sed "s/__VERSION__/$(VERSION)/g" "$<" > "$@"
+
+rknnlite2/rknn_toolkit_lite2-$(VERSION)/rknnlite.egg-info: rknnlite2/rknn_toolkit_lite2-$(VERSION)/setup.py
+	cd rknnlite2/rknn_toolkit_lite2-$(VERSION) && \
+	python3 setup.py bdist_egg
+
+clean: clean-rknn2
+
+.PHONY: clean-rknn2
+clean-rknn2:
+	rm -rf rknnlite2 obj-aarch64-linux-gnu debian/python3-rknnlite2*/ debian/rknpu2-*/
