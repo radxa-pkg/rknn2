@@ -1,7 +1,10 @@
 # rknn2
 
-[![Release](https://github.com/radxa-pkg/rknn2/actions/workflows/release.yml/badge.svg)](https://github.com/radxa-pkg/rknn2/actions/workflows/release.yml)
+[![Release](https://github.com/radxa-pkg/rknn2/actions/workflows/release.yaml/badge.svg)](https://github.com/radxa-pkg/rknn2/actions/workflows/release.yaml)
 
-Rockchip RKNN2, packaged by Radxa.
+## Build
 
-Supports RK356X and RK3588 SoC.
+1. `git clone --recurse-submodules https://github.com/radxa-pkg/rknn2.git`
+2. Open in [`devcontainer`](https://code.visualstudio.com/docs/devcontainers/containers)
+3. `make deb`
+
