@@ -1,3 +1,13 @@
+rknn2 (2.5.0-1) UNRELEASED; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: update with the latest Rockchip file name
+  * fix: rename broken filename
+  * fix: delete old template files
+  * chore: update to v2.5.0
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 18 Nov 2026 10:21:11 +0000
+
 rknn2 (2.3.0-1) jammy; urgency=medium
 
   [ ZHANG Yuntian ]
